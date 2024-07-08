@@ -1,47 +1,61 @@
-﻿/*
- Open-closed principle states that software entities (classes, methods, 
-functions, etc.) should be open for extension but closed for modification.
- */
+﻿using OCP.After;
 
-#region Before OCP
-using OCP.After;
-
-var invoice1 = new OCP.Invoice
+internal class Program
 {
-    InvoiceNo = 1,
-    Customer = "John Doe",
-    IssuedDate = new DateOnly(2023, 4, 1),
-    Description = "Website Design",
-    Amount = 1000
-};
+    static void Main(string[] args)
+    {
+        /*
+         Open-closed principle states that software entities (classes, methods, 
+        functions, etc.) should be open for extension but closed for modification.
+         */
+
+        //Example01();
+        Example02();
 
 
-var invoiceRepository = new InvoiceRepository();
-invoiceRepository.SaveFile(invoice1);
-invoiceRepository.SaveDB(invoice1);
-invoiceRepository.SaveJson(invoice1);
+        Console.ReadKey();
+    }
 
-#endregion
+    private static void Example01()
+    {
+        var invoice1 = new OCP.Invoice
+        {
+            InvoiceNo = 1,
+            Customer = "John Doe",
+            IssuedDate = new DateOnly(2023, 4, 1),
+            Description = "Website Design",
+            Amount = 1000
+        };
 
-#region After OCP
-var invoice2 = new OCP.After.Invoice
-{
-    InvoiceNo = 1,
-    Customer = "John Doe",
-    IssuedDate = new DateOnly(2023, 4, 1),
-    Description = "Website Design",
-    Amount = 1000
-};
 
-IInvoiceRepository repository = new FileInvoiceRepository();
-repository.Save(invoice2);
+        var invoiceRepository = new InvoiceRepository();
+        invoiceRepository.SaveFile(invoice1);
+        invoiceRepository.SaveDB(invoice1);
+        invoiceRepository.SaveJson(invoice1);
 
-repository = new DatabaseInvoiceRepository();
-repository.Save(invoice2);
 
-repository = new JsonInvoiceRepository();
-repository.Save(invoice2);
+        var invoice2 = new OCP.After.Invoice
+        {
+            InvoiceNo = 1,
+            Customer = "John Doe",
+            IssuedDate = new DateOnly(2023, 4, 1),
+            Description = "Website Design",
+            Amount = 1000
+        };
 
-#endregion
+        IInvoiceRepository repository = new FileInvoiceRepository();
+        repository.Save(invoice2);
 
-Console.ReadKey();
+        repository = new DatabaseInvoiceRepository();
+        repository.Save(invoice2);
+
+        repository = new JsonInvoiceRepository();
+        repository.Save(invoice2);
+    }
+
+    private static void Example02()
+    {
+        OCP.After.Quiz quiz = new(OCP.After.QuestionBank.Generate());
+        quiz.Print();
+    }
+}

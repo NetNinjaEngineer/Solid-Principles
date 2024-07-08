@@ -29,7 +29,7 @@ namespace DIP
 
         private static void RunExample04UsingMethodInjection()
         {
-            Console.WriteLine("---------------- {nameof(RunExample04UsingMethodInjection)} ----------------");
+            Console.WriteLine($"---------------- {nameof(RunExample04UsingMethodInjection)} ----------------");
             foreach (var customer in Repository.Customers)
             {
                 var messages = new List<IMessageService>
@@ -45,7 +45,7 @@ namespace DIP
 
         private static void RunExample04UsingPropertyInjection()
         {
-            Console.WriteLine("---------------- {nameof(RunExample04UsingPropertyInjection)} ----------------");
+            Console.WriteLine($"---------------- {nameof(RunExample04UsingPropertyInjection)} ----------------");
             foreach (var customer in Repository.Customers)
             {
                 var messages = new List<IMessageService>
@@ -64,7 +64,7 @@ namespace DIP
 
         private static void RunExample01BeforeDIP()
         {
-            Console.WriteLine("---------------- {nameof(RunExample01BeforeDIP)} ----------------");
+            Console.WriteLine($"---------------- {nameof(RunExample01BeforeDIP)} ----------------");
 
             foreach (var customer in Repository.Customers)
             {
@@ -76,7 +76,7 @@ namespace DIP
 
         private static void RunExample02AfterDIP()
         {
-            Console.WriteLine("---------------- {nameof(RunExample02AfterDIP)} ----------------");
+            Console.WriteLine($"---------------- {nameof(RunExample02AfterDIP)} ----------------");
 
             foreach (var customer in Repository.Customers)
             {
@@ -92,7 +92,7 @@ namespace DIP
 
         private static void RunExample03AfterDIP()
         {
-            Console.WriteLine("---------------- {nameof(RunExample03AfterDIP)} ----------------");
+            Console.WriteLine($"---------------- {nameof(RunExample03AfterDIP)} ----------------");
 
             foreach (var customer in Repository.Customers)
             {
