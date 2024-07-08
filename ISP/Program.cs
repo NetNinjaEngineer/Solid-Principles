@@ -6,6 +6,14 @@ namespace ISP
     {
         static void Main(string[] args)
         {
+            /*
+             In the field of software engineering, the interface segregation 
+            principle (ISP) states that no code should be forced to depend on 
+            methods it does not use.[1] ISP splits interfaces that are very 
+            large into smaller and more specific ones so that clients will only 
+            have to know about the methods that are of interest to them
+             */
+
             //RunExample02BeforeISP();
             RunExample02AfterISP();
 
