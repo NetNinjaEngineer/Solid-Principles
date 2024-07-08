@@ -1,4 +1,5 @@
-﻿namespace SRP.Before;
+﻿namespace OCP;
+
 public class Invoice
 {
     public int InvoiceNo { get; set; }
@@ -6,9 +7,4 @@ public class Invoice
     public string? Customer { get; set; }
     public decimal Amount { get; set; }
     public string? Description { get; set; }
-
-    public void Save()
-    {
-        Console.WriteLine($"Saved the invoice #{InvoiceNo}");
-    }
 }

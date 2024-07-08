@@ -6,9 +6,9 @@
     has in an application.
  */
 
-using SingleResponsibiltyPrinciple.After;
+using SRP.After;
 
-var invoice01 = new SingleResponsibiltyPrinciple.Before.Invoice
+var invoice01 = new SRP.Before.Invoice
 {
     InvoiceNo = 1,
     Customer = "John Doe",

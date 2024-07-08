@@ -1,4 +1,4 @@
-﻿namespace SingleResponsibiltyPrinciple.After;
+﻿namespace SRP.After;
 public class Invoice
 {
     public int InvoiceNo { get; set; }

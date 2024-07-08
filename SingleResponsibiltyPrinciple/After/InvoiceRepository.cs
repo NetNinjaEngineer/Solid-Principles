@@ -1,4 +1,4 @@
-﻿namespace SingleResponsibiltyPrinciple.After;
+﻿namespace SRP.After;
 public class InvoiceRepository(Invoice invoice)
 {
     public void Save()
