@@ -1,4 +1,4 @@
-﻿namespace SRP.After;
+﻿namespace SRP;
 public class Invoice
 {
     public int InvoiceNo { get; set; }
